@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700 &display=swap');:root {
+        --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+        --Light-Grayish-Blue: hsl(234, 14%, 74%);
+        --Grayish-Blue: hsl(233, 13%, 49%);
+        --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+}
+* {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+}
+body {
+        width: 100vw;
+        min-height: 100vh;
+        background-color: var(--Very-Light-Grayish-Blue);
+        color: var(--Dark-Grayish-Blue);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+}
+body::before {
+        content: '';
+        background: url('./images/bg-top.svg');
+        background-repeat: no-repeat;
+        background-position: top right;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -999;
+}
+body::after {
+        content: '';
+        background: url('./images/bg-bottom.svg');
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: -999;
+}
+h1 {
+        color: var(--Grayish-Blue);
+        font-weight: 700;
+        font-size: 33px;
+        margin-bottom: 30px;
+}
+
+main {
+        margin: auto;
+        max-width: 100%;
+        width: 1200px;
+}
+main section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+.toggleDiv {
+        color: var(--Light-Grayish-Blue);
+        margin-bottom: 40px;
+}
+.priceDiv {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        color: var(--Grayish-Blue);
+        padding: 30px;
+
+}
+.priceDiv h4 {
+        font-weight: 700;
+}
+.priceDiv p {
+        color: var(--Dark-Grayish-Blue);
+        font-size: 4em;
+        margin: 15px 0;
+        width: 250px;
+        font-weight: 700;
+        text-align: center;
+}
+.priceDiv ul {
+        border-top: 1px solid var(--Light-Grayish-Blue);
+        list-style-type: none;
+}
+.priceDiv ul li {
+        border-bottom: 1px solid var(--Light-Grayish-Blue);
+        font-size: 15px;
+        padding: 15px 0;
+        font-weight: 700;
+        letter-spacing: 1px;
+}
+.priceDiv button {
+        background-image: linear-gradient(to right,hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+        border: none;
+        color: white;
+        border-radius: 5px;
+        width: 100%;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-top: 10px;
+        padding: 13px 0;
+        text-transform: uppercase;
+        cursor: pointer;
+}
+.proBox {
+        background: linear-gradient(to bottom,hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+        color: white;
+        transform: scale(1.1);
+}
+.proBox span {
+        color: white;
+}
+.proBox > * {
+        transform: scale(1);
+}
+.proBox button {
+        background-image: none;
+        color: hsl(237, 63%, 64%);
+}
+.proBox ul,
+.proBox ul li {
+        border-color: var(--Very-Light-Grayish-Blue);
+}
+.anually span,
+.monthly span {
+        font-size: 35px;
+}
+.monthly {
+        display: none;
+}
+.showMonthly .priceDiv .monthly {
+        display: block;
+}
+.showMonthly .priceDiv .anually {
+        display: none;
+}
+.toggleDiv {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+.toggleDiv label {
+        background-image: linear-gradient(to right,hsl(236, 72%, 79%),hsl(237, 63%, 64%));
+        border-radius: 50px;
+        cursor: pointer;
+        display: inline-block;
+        margin: 0 10px;
+        position: relative;
+        height: 30px;
+        width: 60px;
+}
+.toggleDiv label .tgl-circle {
+        background-color: white;
+        border-radius: 50%;
+        position: absolute;
+        top: 2.5px;
+        left: 2.5px;
+        height: 25px;
+        width: 25px;
+        transition: tranform 0.5s ease;
+}
+.toggleDiv input {
+        position: absolute;
+        left: -9999;
+}
+.toggleDiv input:checked +label .tgl-circle {
+        transform: translateX(30px);
+}
+@media(max-width:768px) {
+        main section {
+                flex-direction: column;
+        }
+        .priceDiv {
+                margin: 20px 10px;
+        }
+        .proBox {
+                transform: scale(1);
+
+        }
+        main h1 {
+                margin: 30px 0;
+                font-weight: 700;
+        }
+}
